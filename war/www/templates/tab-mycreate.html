@@ -1,0 +1,50 @@
+
+<ion-view view-title="Create myTask">
+
+<ion-content class="padding">
+<ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+</ion-refresher>
+    <form name="myCreate" ng-submit="create()">
+     <ion-list>
+      <label class="item item-input item-stacked-label">
+          <span class="input-label">Title:</span>
+            <input required type="text" id="mytitle" name="mytitle" placeholder="Enter the Title of the Task here">
+        </label>
+  <label class="item item-input item-stacked-label">
+        <span class="input-label">Description</span>
+        <input required type="text" id="desc"  name="desc" placeholder="Enter the Description of the Task here">
+  </label>
+  <label class="item item-input item-stacked-label">
+        <span class="input-label">Due Date</span>
+        <input required type="date" id="eta" name="eta" placeholder="yyyy-mm-dd" pattern="[2][0][1][0-9][-][0-1][0-9][-][0-3][0-9]" title="yyyy-mm-dd" >
+  </label>
+    <label class="item item-input item-select">
+        <span class="input-label">Priority</span>
+        <select id="priority">
+          <option value="High">High</option>
+          <option value="Normal">Normal</option>
+          <option selected value="Low">Low</option>
+    </select>
+  </label>
+         <li class="item item-toggle">
+                 Is this ourTask?
+                 <label class="toggle toggle-positive">
+                   <input ng-model="Approve" type="checkbox">
+                   <div class="track">
+                     <div class="handle"></div>
+                   </div>
+                 </label>
+              </li>
+         </ion-list>
+        <input type="hidden" value={{Approve}} id="Approve"></input>
+        <button id="createButton" type="submit" class="button button-full button-navy" type="submit"  ng-disabled="myCreate.mytitle.$error.required ||  myCreate.desc.$error.required ||  myCreate.eta.$error.required">
+  Create myTask
+</button> 
+    <div class="bar bar-balanced" id="created" style="display:none">Successfully Created the task {{TaskID}}</div>
+        </form>
+  </ion-content>
+</ion-view>
+
+

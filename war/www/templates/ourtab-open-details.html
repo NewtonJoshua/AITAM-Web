@@ -1,0 +1,81 @@
+<ion-view view-title="Open ourTask">
+
+<ion-content class="padding">
+
+    <ion-item class="list card">
+        <div class="item item-divider" ng-hide="x.Status=='Approve'">{{x.MainTitle}}</div>
+        <div class="item item-body " ng-hide="x.Status=='Approve'">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Main Activity:</span>
+                <input required type="text" value="{{ x.MainDesc }}"  readonly>
+            </label>
+
+        </div>
+        <div class="item item-divider">
+             Main Activity Due Date
+        </div>
+        <div class="item picker-input">
+            <label class="item item-input item-stacked-label row">     
+                <input required type="date" id="mainDate" onchange="change('dummyMain','changeMainDate')"   ></input> 
+            <i class="icon ion-edit"></i>
+            </label>
+        </div>
+    <div id="dummyMain">
+    </div>
+    
+    <div class="button-bar" id="MainDateChanged" style="display:none">
+            <button class="button button-full button-balanced"> Main Due date of {{x.TaskID}} is changed</button>     
+    </div>
+  
+    <div id="changeMainDate" class="button-bar" style="display:none">
+    <button class="button button-full button-navy" ng-click="changeMainDate()" >  Change Main Due Date </button>
+    </div>
+    
+      <div class="item item-divider">{{x.TaskID}} :  {{x.Title}}</div>
+      <div class="item item-body ">
+          <label class="item item-input item-stacked-label">
+                <span class="input-label">Description:</span>
+                <input required type="text" value="{{ x.Description }}" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Status:</span>
+                <input required type="text" value="{{ x.Status }}" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Priority:</span>
+                <input required type="text" value="{{ x.Priority }}" readonly>
+            </label>
+           <label class="item item-input item-stacked-label">
+                <span class="input-label">AssigneeName:</span>
+                <input required type="text" value="{{ x.AssigneeName }}" readonly>
+            </label>
+          <label class="item item-input item-stacked-label">
+                <span class="input-label">CreatedDate:</span>
+                <input required type="text" value="{{ x.CreatedDate }}" readonly>
+            </label>
+
+          
+      </div>
+    
+    <div class="item item-divider">
+             Task Due Date
+        </div>
+        <div class="item picker-input">
+            <label class="item item-input item-stacked-label row">     
+                <input required type="date" id="myDate" onchange="change('dummy','changeTaskDate')" ></input> 
+            <i class="icon ion-edit"></i>
+            </label>
+        </div>
+    
+        
+    </ion-item>
+    <div class="bar bar-balanced" id="TaskDateChanged" style="display:none">
+            <p>Due date of Task {{x.TaskID}} is changed</p>       
+    </div>
+    <div id="dummy" style="height: 50px">
+    </div>
+    <div id="changeTaskDate" class="button-bar" style="display:none">
+    <button class="button button-full button-navy"  ng-click="changeTaskDate()" >  Change Task Due Date </button>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,22 @@
+
+
+<ion-view view-title="Open ourTasks">
+
+<ion-content class="padding">
+<ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+</ion-refresher>
+     <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="x in tasks" type="item-text-wrap" href="#/app/ourtabs/open/{{x.TaskID}}">
+        <img ng-src="img/{{x.Priority}}.jpg">
+        <h2>{{x.TaskID}} :  {{x.Title}}</h2>
+        <p>{{x.Description}}<br>
+            Status: {{x.Status}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+

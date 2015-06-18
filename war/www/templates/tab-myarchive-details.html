@@ -1,0 +1,48 @@
+<ion-view view-title="myTasks Archive">
+
+<ion-content class="padding">
+
+    <ion-item class="list card">
+        
+      <div class="item item-divider">{{x.TaskID}} :  {{x.Title}}</div>
+      <div class="item item-body ">
+           <label class="item item-input item-stacked-label">
+                <span class="input-label">Description:</span>
+                <input required type="text" value="{{ x.Description }}" readonly>
+            </label>
+           <label class="item item-input item-stacked-label">
+                <span class="input-label">CreatedDate:</span>
+                <input required type="text" value="{{ x.CreatedDate }}" readonly>
+            </label>
+           <label class="item item-input item-stacked-label">
+                <span class="input-label">Due Date:</span>
+                <input required type="text" value="{{ x.DueDate }}" readonly>
+            </label>
+           <label class="item item-input item-stacked-label">
+                <span class="input-label">Completed Date:</span>
+                <input required type="text" value="{{ x.CompletedDate }}" readonly>
+            </label>
+           <label class="item item-input item-stacked-label">
+                <span class="input-label">Priority:</span>
+                <input required type="text" value="{{ x.Priority }}" readonly>
+            </label>
+           <label class="item item-input item-stacked-label">
+                <span class="input-label">Assignee Name:</span>
+                <input required type="text" value="{{ x.AssigneeName }}" readonly>
+            </label>
+      </div>
+        <div class="item item-divider">
+             Task PerforMeter: {{ x.Rating }}
+        </div>
+        
+        <div class="item item-body ">
+            <div class="item range range-positive">
+                <i class="icon ion-thumbsdown"></i>
+                <input type="range" id="Rating" min="0" max="5" readonly>
+                
+                <i class="icon ion-thumbsup"></i>
+              </div>
+        </div>
+    </ion-item>
+  </ion-content>
+</ion-view>

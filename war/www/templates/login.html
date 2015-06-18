@@ -1,0 +1,23 @@
+<ion-view view-title="AITAM">
+    <ion-content class="padding">
+        <div ng-show="conShow">
+        </div>
+        <form ng-submit="doLogin()" ng-show="loginForm">
+          <ion-list>
+            <label class="item item-input item-stacked-label">
+              <span class="input-label">Username</span>
+              <input type="number" id="username" ng-model="username" placeholder="Enter your Employee ID">
+            </label>
+            <label class="item item-input item-stacked-label">
+              <span class="input-label">Password</span>
+              <input type="password" id="password" ng-model="password" placeholder="sh..... Enter your Password here">
+            </label>
+            
+              <button class="button button-block button-navy" type="submit">Log in</button>
+             
+        </ion-list>
+    </form>
+      
+           
+    </ion-content>
+</ion-view>

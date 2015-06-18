@@ -1,0 +1,73 @@
+/* Empty. Add your own CSS if you like */
+
+input.ng-invalid{
+    background: red;
+}
+
+.card .item-divider{
+  background: #204060;
+    color: white;
+}
+.bar-navy{
+ background: #204060;
+    color: white;
+}
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+    color: #204060;
+}
+.navy-color{
+    color: red;
+}
+
+.button-navy{
+    background: #204060;
+    color: white;
+}
+
+.animOut{
+    
+    -webkit-animation-name: myAnim; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    animation-name: myAnim;
+    animation-duration: 1s;
+
+}
+
+.animIn{
+    
+    -webkit-animation-name: myAnim; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    -webkit-animation-direction: reverse;
+    animation-name: myAnim;
+    animation-duration: 1s;
+    animation-direction: reverse; 
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myAnim {
+     0%   {
+        -webkit-backface-visibility: visible;
+         -webkit-transform-origin: 50% 50% 0px;
+         -webkit-transform: perspective(500px) rotateY(0deg) rotate3d(1, 1, 1, 0deg);
+     }
+    100% {
+        -webkit-backface-visibility: visible;
+         -webkit-transform-origin: 50% 50% 0px;
+        -webkit-transform: perspective(500px) rotateY(0deg) rotate3d(1, 1, 1, 120deg);
+    }
+}
+
+/* Standard syntax */
+@keyframes myAnim {
+     0%   {
+        backface-visibility: visible;
+         transform-origin: 50% 50% 0px;
+         transform: perspective(500px) rotateY(0deg) rotate3d(1, 1, 1, 0deg);
+     }
+    100% {
+        backface-visibility: visible;
+         transform-origin: 50% 50% 0px;
+        transform: perspective(500px) rotateY(0deg) rotate3d(1, 1, 1, 120deg);
+    }
+}
+

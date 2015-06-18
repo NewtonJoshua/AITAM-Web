@@ -1,0 +1,60 @@
+<ion-view view-title="AITAM">
+    <ion-content class="padding">
+        <div class="item-icon-right">
+        <h3>Hi {{employee}},  </h3>
+        <button class="button button-icon icon button-clear ion-log-out" ng-click="logoff()">
+        </button>
+            <h4>Welcome to AITAM</h4>
+             </div>
+        <button class="button button-block button-navy" ng-click="download()">
+            <a class="icon ion-ios-cloud-download-outline"></a>
+     Get the App for {{platform}}
+         <i ng-show="platform=='iOS'" class="icon ion-social-apple"></i> <i ng-show="platform=='Android'" class="icon ion-social-android"></i> 
+         <i ng-show="platform=='ARM'" class="icon ion-social-windows"></i>
+     </button>
+        
+ <ion-item class="list card">    
+    <div class="item item-divider item-icon-right">
+        About AITAM
+         <i  class="icon ion-ios-information-outline"></i>
+    </div>
+     <div class="item item-avatar">
+    <img src="img/icon.png">
+    <h2>AITAM</h2>
+    <p>Ation Item Tracking And Management</p>
+  </div>
+  <div class="item item-body">
+    <p>
+      AITAM is a collaborative tool to help associates to manage and track their action items to completion.<br>
+        AITAM can be used to Create, Assign, Track, Review and Manage the Action Items of a team.<br>
+        AITAM is developed in an effort to learn/refresh the concepts of Java (Java EE Web Components) and Mobile (HTML5- PhoneGap) development.
+
+    </p>
+
+  </div>
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item">
+      <i class="icon ion-social-html5"></i>
+      HTML5
+    </a>
+    <a class="tab-item">
+      <i class="icon ion-social-css3"></i>
+      CSS3
+    </a>
+    <a class="tab-item">
+      <i class="icon ion-social-javascript"></i>
+      JS
+    </a>
+      <a class="tab-item">
+      <i class="icon ion-social-angular"></i>
+      Angular
+    </a>
+    <a class="tab-item">
+      <i class="icon ion-social-chrome"></i>
+      Chrome
+    </a>
+  </div>
+        </ion-item>
+    </ion-content>
+</ion-view>

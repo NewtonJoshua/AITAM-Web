@@ -1,0 +1,53 @@
+
+<ion-view view-title="Create ourTask">
+
+<ion-content class="padding">
+<ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+</ion-refresher>
+        <form name="ourCreate" ng-submit="create()">
+     <ion-list>
+      <label class="item item-input item-stacked-label">
+          <span class="input-label">Title:</span>
+            <input required type="text" id="ourtitle" placeholder="Enter the Title of the Task here">
+        </label>
+  <label class="item item-input item-stacked-label">
+        <span class="input-label">Description</span>
+        <input required type="text" id="desc" placeholder="Enter the Description of the Task here">
+  </label>
+  <label class="item item-input item-stacked-label">
+        <span class="input-label">Due Date</span>
+        <input required type="date" id="eta" placeholder="yyyy-mm-dd" pattern="[2][0][1][0-9][-][0-1][0-9][-][0-3][0-9]" title="yyyy-mm-dd" >
+  </label>
+    <label class="item item-input item-select">
+        <span class="input-label">Priority</span>
+        <select id="priority">
+          <option value="High">High</option>
+          <option selected value="Normal">Normal</option>
+          <option  value="Low">Low</option>
+    </select>
+  </label>
+
+        <div class="item item-divider">
+                    Select Assignee
+        </div>      
+        <div ng-repeat="assignee in assignees">
+         <label class="item item-input  item-select">
+         <div class="input-label">
+          Assignee
+        </div>
+         <select ng-model="assignee.name" ng-change="addAssignee()" ng-options="member.Name group by member.Supervisor for member in members">
+        </select>
+      </label>
+    </div>
+         </ion-list>
+        <button id="createButton" class="button button-full button-navy" type="submit">
+  Create ourTask
+</button> 
+    <div class="bar bar-balanced" id="created" style="display:none">Successfully Created the task "{{TaskName}}"</div>
+        </form>
+  </ion-content>
+</ion-view>
+
+

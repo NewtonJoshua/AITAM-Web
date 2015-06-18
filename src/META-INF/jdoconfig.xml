@@ -1,0 +1,15 @@
+<!DOCTYPE jdoconfig PUBLIC 
+    "-//Sun Microsystems, Inc.//DTD Java Data Objects Configuration 3.0//EN"
+    "http://java.sun.com/dtd/jdoconfig_3_0.dtd">
+
+   <persistence-manager-factory name="transactions-optional">
+       <property name="javax.jdo.PersistenceManagerFactoryClass"
+           value="org.datanucleus.api.jdo.JDOPersistenceManagerFactory"/>
+       <property name="javax.jdo.option.ConnectionURL" value="appengine"/>
+       <property name="javax.jdo.option.NontransactionalRead" value="true"/>
+       <property name="javax.jdo.option.NontransactionalWrite" value="true"/>
+       <property name="javax.jdo.option.RetainValues" value="true"/>
+       <property name="datanucleus.appengine.autoCreateDatastoreTxns" value="true"/>
+       <property name="datanucleus.appengine.singletonPMFForName" value="true"/>
+   </persistence-manager-factory>
+</jdoconfig>

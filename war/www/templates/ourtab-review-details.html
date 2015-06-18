@@ -1,0 +1,83 @@
+<ion-view view-title="Review ourTasks">
+
+<ion-content class="padding">
+
+    <ion-item class="list card">
+        <div class="item item-divider" ng-hide="x.Status=='Approve'">{{x.MainTitle}}</div>
+        <div class="item item-body " ng-hide="x.Status=='Approve'">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Main Activity:</span>
+                <input required type="text" value="{{ x.MainDesc }}" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Main Activity Due Date:</span>
+                <input required type="text" value="{{ x.MainDate }}" readonly>
+            </label>
+        </div>
+      <div class="item item-divider">{{x.TaskID}} :  {{x.Title}}</div>
+      <div class="item item-body ">
+          <label class="item item-input item-stacked-label">
+                <span class="input-label">Description:</span>
+                <input required type="text" value="{{ x.Description }}" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Priority:</span>
+                <input required type="text" value="{{ x.Priority }}" readonly>
+            </label>
+           <label class="item item-input item-stacked-label">
+                <span class="input-label">AssigneeName:</span>
+                <input required type="text" value="{{ x.AssigneeName }}" readonly>
+            </label>
+          <label class="item item-input item-stacked-label">
+                <span class="input-label">CreatedDate:</span>
+                <input required type="text" value="{{ x.CreatedDate }}" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Due Date:</span>
+                <input required type="text" value="{{ x.DueDate }}" readonly>
+            </label>
+          
+      </div>
+         <div class="item item-divider">
+             Review
+        </div>
+        <div class="item item-body ">
+
+            <h2>
+            <p ng-show="x.Status=='Appeal'">Due date Appealed to {{x.AppealedDate}} </p>       
+            <p ng-show="x.Status=='Approve'">Approve as ourTask</p>         
+            <p ng-show="x.Status=='Review'">Submitted for Review on {{x.AppealedDate}}</p>
+            <label class="item item-input item-select" ng-show="x.Status=='Review'">
+                <div class="input-label">
+                  Rating
+                </div>
+                <select ng-model="rt">
+                    <option value="5">Excellent</option>
+                    <option value="4">Very Good</option>
+                    <option value="3" selected>Good</option>
+                    <option value="2">Insufficient</option>
+                    <option value="1">Deficient</option>
+                </select>
+            </label>
+        </h2>
+        </div>
+        
+    </ion-item>
+    <div class="bar bar-balanced" id="showApproved" style="display:none">
+            <p ng-show="x.Status=='Appeal'">Due date of {{x.TaskID}} is changed to {{x.AppealedDate}} </p>       
+            <p ng-show="x.Status=='Approve'">{{x.TaskID}} is approved as ourTask</p>         
+            <p ng-show="x.Status=='Review'">{{x.TaskID}} is completed</p>
+    </div>
+    <div class="bar bar-balanced" id="showRejected" style="display:none">
+            <p ng-show="x.Status=='Appeal'">Due date Appeal of {{x.TaskID}} is Rejected </p>       
+            <p ng-show="x.Status=='Approve'">{{x.TaskID}} is not approved as ourTask</p>         
+            <p ng-show="x.Status=='Review'">{{x.TaskID}} is sent for ReWork</p>
+    </div>
+    <div id="hideButton" class="button-bar">
+
+
+    <button class="button button-full button-navy" id="hideApproved" ng-click="approve()">  Approve </button>
+    <button class="button button-full button-assertive" id="hideRejected" ng-click="reject()">  Reject </button>
+    </div>
+  </ion-content>
+</ion-view>

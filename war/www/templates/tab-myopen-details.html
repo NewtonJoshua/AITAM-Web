@@ -1,0 +1,58 @@
+<ion-view view-title="Open myTasks">
+
+<ion-content class="padding">
+
+    <ion-item class="list card">
+        
+      <div class="item item-divider">{{x.TaskID}} :  {{x.Title}}</div>
+      <div class="item item-body">
+           <label class="item item-input item-stacked-label">
+                <span class="input-label">Description:</span>
+                <input required type="text" value="{{ x.Description }}" readonly>
+            </label>
+          <label class="item item-input item-stacked-label">
+                <span class="input-label">CreatedDate:</span>
+                <input required type="text" value="{{ x.CreatedDate }}" readonly>
+            </label>
+          <label class="item item-input item-stacked-label">
+                <span class="input-label">Due Date:</span>
+                <input required type="text" value="{{ x.DueDate }}" readonly>
+            </label>
+          <label class="item item-input item-stacked-label">
+                <span class="input-label">Priority:</span>
+                <input required type="text" value="{{ x.Priority }}" readonly>
+            </label>
+          <label class="item item-input item-stacked-label">
+                <span class="input-label">AssigneeName:</span>
+                <input required type="text" value="{{ x.AssigneeName }}" readonly>
+            </label>
+      </div>
+         <div class="item item-divider">
+             Task Status
+        </div>
+        <div class="item item-body" style="overflow:hidden;">
+            <label class="item item-radio" ng-hide="(x.Status=='Progress' || x.Status=='Review')">
+                <input type="radio" name="group" ng-checked="true" >
+                <div class="item-content">
+                  {{x.Status}}
+                </div>
+                <i class="radio-icon ion-android-checkmark-circle"></i>
+              </label>
+            <label class="item item-radio" id="Progress">
+                <input type="radio" name="group" ng-checked="(x.Status=='Progress')" ng-click="inProgress()">
+                <div class="item-content">
+                  In Progress
+                </div>
+                <i class="radio-icon ion-android-checkmark-circle"></i>
+              </label>
+                <label class="item item-radio" id="Review">
+                <input type="radio" name="group" ng-checked="(x.Status=='Review')" ng-click="review()">
+                <div class="item-content">
+                  Review
+                </div>
+                <i class="radio-icon ion-android-checkmark-circle"></i>
+              </label>
+        </div>
+    </ion-item>
+  </ion-content>
+</ion-view>
