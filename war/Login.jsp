@@ -7,7 +7,7 @@
  	<script src="JavaScript/scriptFiles.js"></script>
  	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
  	<link rel="stylesheet" type="text/css" href="CSS/Styles.css"></link>
- 	<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/kchdcdekjfkcjdoighhbghbboomaabaa">
+ 	<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/{{Chrome WebStore Product ID}}">
 
 <script type="application/ld+json">
 {
@@ -102,7 +102,7 @@ M<font size="5" face="Monotype Corsiva">anagement</font></font>
     	<b> &nbsp;  &nbsp; Reset &nbsp;  &nbsp; </b>
 		</button></td></tr>
 		</table>
-		<div align="center" class="g-recaptcha" data-sitekey="6LcTSgcTAAAAADt8zloaqUlMgeHSUqqHXkkK9pR4"></div>
+		<div align="center" class="g-recaptcha" data-sitekey="{{reCaptcha Client side Key}}"></div>
 		</form>
   
  
