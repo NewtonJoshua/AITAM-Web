@@ -12,7 +12,7 @@ import javax.servlet.ServletException;
 	public class ReCaptcha {
 
 		public static String verify(String res) throws ServletException, IOException {
-			URL url = new URL("https://www.google.com/recaptcha/api/siteverify?secret=6LcTSgcTAAAAAA5vU3E9jVANXuo5eao20wo6wI9J&response="+res);
+			URL url = new URL("https://www.google.com/recaptcha/api/siteverify?secret={{reCaptcha Server side Key}}&response="+res);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
 			String line, outputString = "";
