@@ -24,20 +24,7 @@ angular.module('starter', ['ionic',
   });
 })
 
-//Push
 
- .config(['$ionicAppProvider', function($ionicAppProvider) {
-  // Identify app
-  $ionicAppProvider.identify({
-    // The App ID (from apps.ionic.io) for the server
-    app_id: 'e554545b',
-    // The public API key all services will use for this app
-    api_key: '3435aa8d074aa7d80a57731172c5d293c051288d8b00cc00',
-    // Set the app to use development pushes
-    gcm_id: '355260648083',
-    dev_push: true
-  });
- }])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
