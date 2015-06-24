@@ -21,7 +21,7 @@ public class Connect {
 	 else{
 		 		// Connecting from an external network.
 		  Class.forName("com.mysql.jdbc.Driver");
-		  url = "jdbc:mysql://{{IPv4 address}}.235:3306/{{Database Name}}?user={{User name}}&password={{Password for root}}";
+		  url = "jdbc:mysql://{{IPv4 address}}:3306/{{Database Name}}?user={{User name}}&password={{Password for root}}";
 	 }
 		Connection conn = DriverManager.getConnection(url);
 		return conn;
