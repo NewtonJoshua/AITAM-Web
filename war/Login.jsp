@@ -83,8 +83,10 @@ M<font size="5" face="Monotype Corsiva">anagement</font></font>
  		<form method="post" action="Controller">
 	    <input type="hidden"></input>
 	    <table>
-		<tr><td>User ID:</td><td><input type="text" required minlength="6" maxlength="6" pattern="[0-9]{6}" title="6 digit Employee ID" name="id" maxlength="6" minlength="6" required autofocus></input></td></tr>
-		<tr><td>Password: </td><td><input type="password" required name="pw"  minlength="6" required></input></td></tr>
+		<tr><td>User ID:</td><td><input type="text" required minlength="6" maxlength="6" pattern="[0-9]{6}" 
+		title="6 digit Employee ID" name="id" maxlength="6" minlength="6" required autofocus></input></td></tr>
+		<tr><td>Password: </td><td><input type="password" required name="pw"  minlength="6" required></input></td>
+		</tr>
 		<tr><td><input type="hidden" id="fingerprint" name="fingerprint"></input></td>
 		<td><input type="hidden" id="browser" name="browser"></input></td></tr>
 		<tr>
