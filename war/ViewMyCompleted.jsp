@@ -28,12 +28,14 @@ List<TaskBean> l=null;
 
 %>
 <table  bgcolor="#336699" border="1" width="80%">
-<tr><th>ID</th><th>Task Title</th><th>Status</th><th>Assigned Date</th><th>Due Date</th><th>Completed</th><th>Priority</th><th>Assigned By</th><th>PerforMeter</th>
+<tr><th>ID</th><th>Task Title</th><th>Status</th><th>Assigned Date</th><th>Due Date</th><th>Completed</th><th>Priority
+</th><th>Assigned By</th><th>PerforMeter</th>
 </tr>
 <%for(TaskBean task: l){ %>
 <tr >
 <td><%=task.getTaskId() %></td>
-<td><%=task.getTitle() %> <img align="right" width="20px" src="images/question-mark.png" onclick='alert("Description of Task: \n<%out.print(task.getDesc()); %>");'/></td>
+<td><%=task.getTitle() %> <img align="right" width="20px" src="images/question-mark.png" 
+onclick='alert("Description of Task: \n<%out.print(task.getDesc()); %>");'/></td>
 <td><%=task.getStatus()%></td>
 <td><%=task.getCreatedDate() %></td>
 <td><%=task.getDueDate() %></td>
