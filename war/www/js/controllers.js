@@ -766,7 +766,8 @@ $scope.dispStatus=function(){
     
     $scope.reject=function(){
         showLoading=true;
-       $http.post(url+"action=ReviewReject&taskID="+$stateParams.taskID+"&status="+t.Status+"&Priority="+p+"&assigned="+t.Assigned)
+       $http.post(url+"action=ReviewReject&taskID="+$stateParams.taskID+"&status="+t.Status+"&Priority="+p+"&assigned="+
+       t.Assigned)
         .success(function (response) {
            showLoading=false;
                         if(response.ReviewReject == "Succcess"){
