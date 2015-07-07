@@ -31,7 +31,8 @@ public class ViewMyNewTasks {
 		ResultSet rs6=null;
 		try{
 			st1= conn.createStatement();
-			rs1= st1.executeQuery("select distinct TASK_ID from AITAM_HIST where ASSIGNED=" + emp.getID() + " and (CUR_STATUS='New') order by TASK_ID DESC");
+			rs1= st1.executeQuery("select distinct TASK_ID from AITAM_HIST where ASSIGNED=" + emp.getID() + 
+			" and (CUR_STATUS='New') order by TASK_ID DESC");
 			while (rs1!=null && rs1.next()){
 				int taskId=rs1.getInt(1);
 				st= conn.createStatement();
@@ -61,7 +62,8 @@ public class ViewMyNewTasks {
 					}
 					else{
 						st5= conn.createStatement();
-						rs5= st5.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + (rs.getInt(5)));
+						rs5= st5.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + 
+						(rs.getInt(5)));
 						while (rs5.next()){
 							task.setReviewerName(rs5.getString(1));
 						}
