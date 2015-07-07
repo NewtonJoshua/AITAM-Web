@@ -73,7 +73,8 @@ public class Summary {
 				
 			}
 			open=Accepted+Appeal+Progress+Review+Approve+ApproveAcp+ApproveDec+AppealAcp+AppealDec+Rework;
-			str=newTask+" "+Accepted+" "+Progress+" "+Review+" "+Appeal+" "+AppealAcp+" "+AppealDec+" "+Approve+" "+ApproveAcp+" "+ApproveDec+" "+Rework+" "+open+" "+Completed;
+			str=newTask+" "+Accepted+" "+Progress+" "+Review+" "+Appeal+" "+AppealAcp+" "+AppealDec+" "+
+			Approve+" "+ApproveAcp+" "+ApproveDec+" "+Rework+" "+open+" "+Completed;
 		}
 		finally{
 			if(st!=null){
@@ -152,7 +153,8 @@ public class Summary {
 			}
 			totReview=Review+Approve+Appeal;
 			open=Accepted+Progress+ApproveAcp+ApproveDec+AppealAcp+AppealDec+Rework+newTask;
-			str=newTask+" "+Accepted+" "+Progress+" "+Review+" "+Appeal+" "+AppealAcp+" "+AppealDec+" "+Approve+" "+ApproveAcp+" "+ApproveDec+" "+Rework+" "+open+" "+Completed+" "+totReview;
+			str=newTask+" "+Accepted+" "+Progress+" "+Review+" "+Appeal+" "+AppealAcp+" "+AppealDec+" "+
+			Approve+" "+ApproveAcp+" "+ApproveDec+" "+Rework+" "+open+" "+Completed+" "+totReview;
 		}
 		finally{
 			if(st!=null){
