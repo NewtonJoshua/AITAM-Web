@@ -31,7 +31,8 @@ public class ViewMyCompleted {
 		ResultSet rs6=null;
 		try{
 			st1= conn.createStatement();
-			rs1= st1.executeQuery("select distinct TASK_ID from AITAM_HIST where ASSIGNED=" + emp.getID() + " and (CUR_STATUS='Completed') order by TASK_ID DESC");
+			rs1= st1.executeQuery("select distinct TASK_ID from AITAM_HIST where ASSIGNED=" + emp.getID() +
+			" and (CUR_STATUS='Completed') order by TASK_ID DESC");
 			while (rs1!=null && rs1.next()){
 				int taskId=rs1.getInt(1);
 				st= conn.createStatement();
@@ -57,7 +58,8 @@ public class ViewMyCompleted {
 					task.setCreatedDate(dateN1);
 					
 					st3= conn.createStatement();
-					rs3= st3.executeQuery("select modified from AITAM_HIST where cur_status='Completed' and TASK_ID=" + taskId);
+					rs3= st3.executeQuery("select modified from AITAM_HIST where cur_status='Completed' 
+					and TASK_ID=" + taskId);
 					while (rs3.next()){
 						Date date2 = rs.getDate(10);
 						DateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
@@ -76,12 +78,14 @@ public class ViewMyCompleted {
 					}
 					else{
 						st5= conn.createStatement();
-						rs5= st5.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + (rs.getInt(5)));
+						rs5= st5.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + 
+						(rs.getInt(5)));
 						while (rs5.next()){
 							task.setReviewerName(rs5.getString(1));
 						}
 						st6= conn.createStatement();
-						rs6= st6.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + Creator);
+						rs6= st6.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + 
+						Creator);
 						while (rs6.next()){
 							task.setAssigneeName(rs6.getString(1));
 						}
