@@ -27,8 +27,11 @@ public class ViewMyTask {
 		ResultSet rs6=null;
 		try{
 			st1= conn.createStatement();
-			 rs1=st1.executeQuery("select distinct TASK_ID from AITAM_HIST where ASSIGNED=" + emp.getID() + " and (CUR_STATUS='Accepted'or CUR_STATUS='Appeal' or CUR_STATUS='Progress' or CUR_STATUS='Review'"
-			 		+ " or CUR_STATUS='Approve' or CUR_STATUS='Approve-Acp' or CUR_STATUS='Approve-Dec' or CUR_STATUS='Appeal-Acp' or CUR_STATUS='Appeal-Dec' or  CUR_STATUS='ReWork') order by TASK_ID DESC");
+			 rs1=st1.executeQuery("select distinct TASK_ID from AITAM_HIST where ASSIGNED=" + emp.getID() +
+			 " and (CUR_STATUS='Accepted'or CUR_STATUS='Appeal' or CUR_STATUS='Progress' or CUR_STATUS='Review'"
+			 		+ " or CUR_STATUS='Approve' or CUR_STATUS='Approve-Acp' or CUR_STATUS='Approve-Dec'
+			 		or CUR_STATUS='Appeal-Acp' or CUR_STATUS='Appeal-Dec' or  CUR_STATUS='ReWork') order 
+			 		by TASK_ID DESC");
 			while (rs1!=null && rs1.next()){
 				int taskId=rs1.getInt(1);
 				st= conn.createStatement();
@@ -58,7 +61,8 @@ public class ViewMyTask {
 					}
 					else{
 						st5= conn.createStatement();
-						rs5= st5.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + (rs.getInt(5)));
+						rs5= st5.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + 
+						(rs.getInt(5)));
 						while (rs5.next()){
 							task.setReviewerName(rs5.getString(1));
 						}
