@@ -29,14 +29,17 @@
         </div>
         <div class="item picker-input">
             <label class="item item-input item-stacked-label row">     
-                <input required type="date" id="myDate" onchange="change('hideAccept','showAppeal')"></input> <i class="icon ion-edit"></i>
+                <input required type="date" id="myDate" onchange="change('hideAccept','showAppeal')"></input> 
+                <i class="icon ion-edit"></i>
             </label>
         </div>
     </ion-item>
     <div class="bar bar-balanced" id="showAccepted" style="display:none">Successfully Accepteted the task {{x.TaskID}}</div>
-    <div class="bar bar-balanced" id="hideAppeal" style="display:none">Successfully Appealed the due date of the task {{x.TaskID}}</div>
+    <div class="bar bar-balanced" id="hideAppeal" style="display:none">Successfully Appealed the due date of 
+    the task {{x.TaskID}}</div>
     <button class="button button-full button-navy" id="hideAccept" ng-click="accept()">  Accept myTask </button>
-    <button class="button button-full button-navy " id="showAppeal" style="display:none" ng-click="appeal()">  Appeal Due Date </button>
+    <button class="button button-full button-navy " id="showAppeal" style="display:none" ng-click="appeal()"> 
+    Appeal Due Date </button>
     
   </ion-content>
 </ion-view>
