@@ -18,7 +18,8 @@
   </label>
   <label class="item item-input item-stacked-label">
         <span class="input-label">Due Date</span>
-        <input required type="date" id="eta" name="eta" placeholder="yyyy-mm-dd" pattern="[2][0][1][0-9][-][0-1][0-9][-][0-3][0-9]" title="yyyy-mm-dd" >
+        <input required type="date" id="eta" name="eta" placeholder="yyyy-mm-dd" 
+        pattern="[2][0][1][0-9][-][0-1][0-9][-][0-3][0-9]" title="yyyy-mm-dd" >
   </label>
     <label class="item item-input item-select">
         <span class="input-label">Priority</span>
@@ -39,7 +40,8 @@
               </li>
          </ion-list>
         <input type="hidden" value={{Approve}} id="Approve"></input>
-        <button id="createButton" type="submit" class="button button-full button-navy" type="submit"  ng-disabled="myCreate.mytitle.$error.required ||  myCreate.desc.$error.required ||  myCreate.eta.$error.required">
+        <button id="createButton" type="submit" class="button button-full button-navy" type="submit" 
+        ng-disabled="myCreate.mytitle.$error.required ||  myCreate.desc.$error.required ||  myCreate.eta.$error.required">
   Create myTask
 </button> 
     <div class="bar bar-balanced" id="created" style="display:none">Successfully Created the task {{TaskID}}</div>
