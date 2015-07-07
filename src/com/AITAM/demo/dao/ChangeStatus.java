@@ -16,7 +16,8 @@ import org.json.JSONException;
 import com.AITAM.demo.bean.TaskBean;
 
 public class ChangeStatus {
-	public void changeStatus( TaskBean task) throws ClassNotFoundException, SQLException, ParseException, JSONException, IOException{
+	public void changeStatus( TaskBean task) throws ClassNotFoundException, SQLException, ParseException, 
+	JSONException, IOException{
 		Connection conn= Connect.connect();
 		PreparedStatement pst2=null;
 		Statement st1=null;
