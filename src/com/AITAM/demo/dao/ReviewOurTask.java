@@ -30,7 +30,8 @@ public class ReviewOurTask {
 		
 			st1=conn.createStatement();
 			//Appeal + Review
-			rs1=st1.executeQuery("select * from AITAM_TASK where REVIEWER=" + emp.getID() + " and ASIGNEE<>" +  emp.getID()+ " and "
+			rs1=st1.executeQuery("select * from AITAM_TASK where REVIEWER=" + emp.getID() + " and ASIGNEE<>" +  
+			emp.getID()+ " and "
 					+ "(STATUS='Appeal' or STATUS='Review' or STATUS='Approve')");
 			while (rs1!=null && rs1.next()){
 				int id=rs1.getInt(1);
@@ -68,7 +69,8 @@ public class ReviewOurTask {
 				}
 				if(rs1.getString(6).equalsIgnoreCase("Appeal")){
 					st3= conn.createStatement();
-					rs3= st3.executeQuery("select APPEAL_DATE from AITAM_HIST where TASK_ID=" + id +" and STATUS='Appeal'");
+					rs3= st3.executeQuery("select APPEAL_DATE from AITAM_HIST where TASK_ID=" + id +
+					" and STATUS='Appeal'");
 					if(rs3.next()){
 					Date date4 = rs3.getDate(1);
 					DateFormat df4 = new SimpleDateFormat("yyyy-MM-dd");
@@ -79,7 +81,8 @@ public class ReviewOurTask {
 				}
 				if(rs1.getString(6).equalsIgnoreCase("Review")){
 					st3= conn.createStatement();
-					rs3= st3.executeQuery("select MODIFIED from AITAM_HIST where TASK_ID=" + id +" and STATUS='Review'");
+					rs3= st3.executeQuery("select MODIFIED from AITAM_HIST where TASK_ID=" + id +
+					" and STATUS='Review'");
 					if(rs3.next()){
 					Date date4 = rs3.getDate(1);
 					DateFormat df4 = new SimpleDateFormat("yyyy-MM-dd");
@@ -94,7 +97,8 @@ public class ReviewOurTask {
 			GetMembers get=new GetMembers();
 			List<EmpBean> l1=get.getImmMembers(emp);
 			for(EmpBean emp1:l1){
-				rs1=st1.executeQuery("select * from AITAM_TASK where CREATOR=" + emp1.getID() + " and STATUS='Approve'");
+				rs1=st1.executeQuery("select * from AITAM_TASK where CREATOR=" + emp1.getID() + 
+				" and STATUS='Approve'");
 				while(rs1.next()){
 					
 					int id=rs1.getInt(1);
@@ -126,7 +130,8 @@ public class ReviewOurTask {
 						task.setMainDate(dateN2);
 					}
 					Statement st6= conn.createStatement();
-					ResultSet rs6= st6.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + (rs1.getInt(11)));
+					ResultSet rs6= st6.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + 
+					(rs1.getInt(11)));
 					while (rs6.next()){
 						task.setAssigneeName(rs6.getString(1));
 					}
