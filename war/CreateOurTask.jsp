@@ -32,10 +32,14 @@ l=mem.getMembers(emp);
     	<table width="80%">
     	<tr>
     		<td width="15%">Title:</td><td width="35%">
-    		<input required maxlength="100" type="text" size=40% id="mTitle" name="title" onchange="copyText('mTitle','s1Title')"></input>
-    		</td><td width="15%">Due Date: </td><td width="20%"><input id="mDate" type="date" required pattern="[2][0][1][0-9][-][0-1][0-9][-][0-3][0-9]" min="2015-01-01" title="yyyy-mm-dd"  name="eta" onchange="copyText('mDate','s1Date')"></input></td>
+    		<input required maxlength="100" type="text" size=40% id="mTitle" name="title" 
+    		onchange="copyText('mTitle','s1Title')"></input>
+    		</td><td width="15%">Due Date: </td><td width="20%"><input id="mDate" type="date" 
+    		required pattern="[2][0][1][0-9][-][0-1][0-9][-][0-3][0-9]" min="2015-01-01" title="yyyy-mm-dd" 
+    		name="eta" onchange="copyText('mDate','s1Date')"></input></td>
     	</tr><tr>
-    		<td>Description</td><td><textarea required maxlength="250" id="mDesc" rows="3"  cols=40% name="desc" onchange="copyText('mDesc','s1Desc')"></textarea></td>
+    		<td>Description</td><td><textarea required maxlength="250" id="mDesc" rows="3"  cols=40% name="desc"
+    		onchange="copyText('mDesc','s1Desc')"></textarea></td>
     		<td>Priority: </td>
     		<td><input type="radio" name="priority" value="High" >High<br>
     			<input type="radio" name="priority" value="Normal" checked>Normal<br>
@@ -60,7 +64,8 @@ l=mem.getMembers(emp);
 			<%} %>
 		</select></td>
     	<td><input type="date" name="s1Date" id="s1Date"></input></td>
-    	<td align="center"><img  src="images/Add.png" width="18px" onclick="enableRow('2'); copyText('s1Title','s2Title'); copyText('s1Desc','s2Desc'); copyText('s1Date','s2Date'); RowSelected('s2')"></img>
+    	<td align="center"><img  src="images/Add.png" width="18px" onclick="enableRow('2'); copyText('s1Title','s2Title');
+    	copyText('s1Desc','s2Desc'); copyText('s1Date','s2Date'); RowSelected('s2')"></img>
     	<input type="hidden" id="s1" name="s1" value="selected"></input>
     	</td></tr>
 		
@@ -74,7 +79,8 @@ l=mem.getMembers(emp);
 			<%} %>
 		</select></td>
     	<td><input type="date" id="s2Date" name="s2Date"></input></td>
-    	<td align="center"><img  src="images/Add.png" width="18px" onclick="enableRow('3'); copyText('s2Title','s3Title'); copyText('s2Desc','s3Desc'); copyText('s2Date','s3Date'); RowSelected('s3')"></img>
+    	<td align="center"><img  src="images/Add.png" width="18px" onclick="enableRow('3'); copyText('s2Title','s3Title');
+    	copyText('s2Desc','s3Desc'); copyText('s2Date','s3Date'); RowSelected('s3')"></img>
     	<input type="hidden" id="s2" name="s2"></input>
     	&nbsp; <img  src="images/remove.png" width="22px" onclick="disableRow('2');"></img>
     	</td></tr>
@@ -89,7 +95,8 @@ l=mem.getMembers(emp);
 			<%} %>
 		</select></td>
     	<td><input type="date" id="s3Date" name="s3Date"></input></td>
-    	<td align="center"><img  src="images/Add.png" width="18px" onclick="enableRow('4'); copyText('s3Title','s4Title'); copyText('s3Desc','s4Desc'); copyText('s3Date','s4Date'); RowSelected('s4')"></img>
+    	<td align="center"><img  src="images/Add.png" width="18px" onclick="enableRow('4'); copyText('s3Title','s4Title');
+    	copyText('s3Desc','s4Desc'); copyText('s3Date','s4Date'); RowSelected('s4')"></img>
     	<input type="hidden" id="s3" name="s3"></input>
     	&nbsp; <img  src="images/remove.png" width="22px" onclick="disableRow('3');"></img>
     	</td></tr>
@@ -104,7 +111,8 @@ l=mem.getMembers(emp);
 			<%} %>
 		</select></td>
     	<td><input type="date" id="s4Date" name="s4Date"></input></td>
-    	<td align="center"><img  src="images/Add.png" width="18px" onclick="enableRow('5'); copyText('s4Title','s5Title'); copyText('s4Desc','s5Desc'); copyText('s4Date','s5Date'); RowSelected('s5')"></img>
+    	<td align="center"><img  src="images/Add.png" width="18px" onclick="enableRow('5'); copyText('s4Title','s5Title'); 
+    	copyText('s4Desc','s5Desc'); copyText('s4Date','s5Date'); RowSelected('s5')"></img>
     	<input type="hidden" id="s4" name="s4"></input>
     	&nbsp; <img  src="images/remove.png" width="22px" onclick="disableRow('4');"></img>
     	</td></tr>
