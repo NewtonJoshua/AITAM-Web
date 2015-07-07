@@ -26,11 +26,13 @@ public class DeviceLogin {
 				while(rs.next()){
 					id=rs.getInt(1);
 					//if(rs.getInt(1)== device.getEmpID()){
-						rs1=st1.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + rs.getInt(1));
+						rs1=st1.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + 
+						rs.getInt(1));
 						while(rs1.next()){
 							name=rs1.getString(1);
 						}
-						rs1= st1.executeQuery("select ID from AITAM_EMPLOYEE where SUPERVISOR =" + device.getEmpID());
+						rs1= st1.executeQuery("select ID from AITAM_EMPLOYEE where SUPERVISOR =" +
+						device.getEmpID());
 						while(rs1.next()){
 							isMan= "Yes";
 						}
