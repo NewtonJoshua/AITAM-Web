@@ -16,7 +16,8 @@ import org.json.JSONException;
 import com.AITAM.demo.bean.TaskBean;
 
 public class CreateMyTask {
-	public int createMyTask(TaskBean task) throws ClassNotFoundException, SQLException, ParseException, JSONException, IOException{
+	public int createMyTask(TaskBean task) throws ClassNotFoundException, SQLException, ParseException, JSONException, 
+	IOException{
 		Connection conn=Connect.connect();
 		
 		int taskID=0;
@@ -37,7 +38,8 @@ public class CreateMyTask {
 			while(rs.next()){
 				taskID=rs.getInt(1);
 			}
-			pst= conn.prepareStatement("insert into AITAM_TASK (TASK_ID, TITLE,DISC,ETA,PRIORITY,REVIEWER,STATUS,CREATOR,CREATED,ASIGNEE)"
+			pst= conn.prepareStatement("insert into AITAM_TASK (TASK_ID, TITLE,DISC,ETA,PRIORITY,
+			REVIEWER,STATUS,CREATOR,CREATED,ASIGNEE)"
 					+ " values(?,?,?,?,?,?,?,?,?,?)");
 			task.setTaskId(taskID+1);
 			pst.setInt(1, task.getTaskId());
@@ -135,7 +137,8 @@ public class CreateMyTask {
 		Connection conn2=Connect.connect();
 		PreparedStatement pst2=null;
 		try{
-			pst2= conn2.prepareStatement("insert into AITAM_OURTASK (SUB_ID,TITLE,ETA,DISC,PRIORITY,ASSIGNED,MAIN_ID,CREATED)"
+			pst2= conn2.prepareStatement("insert into AITAM_OURTASK (SUB_ID,TITLE,ETA,DISC,PRIORITY,
+			ASSIGNED,MAIN_ID,CREATED)"
 					+ " values(?,?,?,?,?,?,?,?)");
 			pst2.setInt(1, task.getTaskId());
 			pst2.setString(2, task.getMainTitle());
