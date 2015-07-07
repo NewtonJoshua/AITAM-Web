@@ -31,7 +31,8 @@ public class Perfometer {
 	}
 	
 	
-	public String myDayChart(String from,String to, EmpBean emp, Connection conn) throws ParseException, ClassNotFoundException, SQLException{
+	public String myDayChart(String from,String to, EmpBean emp, Connection conn) throws ParseException,
+	ClassNotFoundException, SQLException{
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date parsed1 = format.parse(from);
         java.sql.Date FromDate = new java.sql.Date(parsed1.getTime());
@@ -62,7 +63,8 @@ public class Perfometer {
 		
 	}
 	
-	public String genMyDayChart(java.sql.Date sqlDate, EmpBean emp, Connection conn) throws ClassNotFoundException, SQLException{
+	public String genMyDayChart(java.sql.Date sqlDate, EmpBean emp, Connection conn) throws ClassNotFoundException, 
+	SQLException{
 		Statement st=null;
 		ResultSet rs=null;
 		Statement st1=null;
@@ -72,9 +74,11 @@ public class Perfometer {
 		String str=null;
 		try{
 			st= conn.createStatement();
-			rs= st.executeQuery("select SUB_ID, TIME_COMP, REVIEW, RATING from AITAM_OURTASK where CREATED<='"+sqlDate +"'  AND COMPLETED>='"+sqlDate +"' AND ASSIGNED="+emp.getID());
+			rs= st.executeQuery("select SUB_ID, TIME_COMP, REVIEW, RATING from AITAM_OURTASK where CREATED<='"+
+			sqlDate +"'  AND COMPLETED>='"+sqlDate +"' AND ASSIGNED="+emp.getID());
 			st1= conn.createStatement();
-			rs1= st1.executeQuery("select ID from AITAM_EMPLOYEE where SUPERVISOR=(select SUPERVISOR from AITAM_EMPLOYEE where ID=" + emp.getID() + ")");
+			rs1= st1.executeQuery("select ID from AITAM_EMPLOYEE where SUPERVISOR=(select SUPERVISOR from 
+			AITAM_EMPLOYEE where ID=" + emp.getID() + ")");
 			
 			int timeComp=0;
 			int review=0;
@@ -101,7 +105,8 @@ public class Perfometer {
 			while (rs1.next()){
 				int id=rs1.getInt(1);
 				st2= conn.createStatement();
-				rs2= st2.executeQuery("select count(SUB_ID) from AITAM_OURTASK where CREATED<='"+sqlDate +"'  AND COMPLETED>='"+sqlDate +"' AND ASSIGNED="+ id);
+				rs2= st2.executeQuery("select count(SUB_ID) from AITAM_OURTASK where CREATED<='"+sqlDate +
+				"'  AND COMPLETED>='"+sqlDate +"' AND ASSIGNED="+ id);
 				
 				while(rs2.next()){
 					int c=rs2.getInt(1);
@@ -143,7 +148,8 @@ public class Perfometer {
 		
 	}
 	
-	public String teamPerfometer(String from,String to, EmpBean emp) throws ClassNotFoundException, SQLException, ParseException, IOException{
+	public String teamPerfometer(String from,String to, EmpBean emp) throws ClassNotFoundException, SQLException, 
+	ParseException, IOException{
 		Connection conn=Connect.connect();
 		String str=null;
 		try{
@@ -171,7 +177,8 @@ public class Perfometer {
 	
 	// Tool Tip Chart. Not in use.
 	
-	/** public String ourPerfometer(String from,String to, EmpBean emp) throws ClassNotFoundException, SQLException, ParseException{
+	/** public String ourPerfometer(String from,String to, EmpBean emp) throws ClassNotFoundException, SQLException, 
+	 * ParseException{
 		String str=null;
 		
 		//Prim Chart
@@ -212,7 +219,8 @@ public class Perfometer {
 	 * @throws ParseException **/
 	
 	// Get consolidate rating between two dates
-	private String getRating(String from,String to,EmpBean emp,Connection conn) throws ClassNotFoundException, SQLException, ParseException {
+	private String getRating(String from,String to,EmpBean emp,Connection conn) throws ClassNotFoundException, 
+	SQLException, ParseException {
 		List<java.sql.Date> d=getDateBetween(from,to);
 		int timeCompAvg=0;
 		int reviewAvg=0;
@@ -227,9 +235,11 @@ public class Perfometer {
 			ResultSet rs1=null;
 			try{
 				st= conn.createStatement();
-				rs= st.executeQuery("select SUB_ID, TIME_COMP, REVIEW, RATING from AITAM_OURTASK where CREATED<='"+sqlDate +"'  AND COMPLETED>='"+sqlDate +"' AND ASSIGNED=" +emp.getID() );
+				rs= st.executeQuery("select SUB_ID, TIME_COMP, REVIEW, RATING from AITAM_OURTASK 
+				where CREATED<='"+sqlDate +"'  AND COMPLETED>='"+sqlDate +"' AND ASSIGNED=" +emp.getID() );
 				st1= conn.createStatement();
-				rs1= st1.executeQuery("select ID from AITAM_EMPLOYEE where SUPERVISOR=(select SUPERVISOR from AITAM_EMPLOYEE where ID=" + emp.getID() + ")");
+				rs1= st1.executeQuery("select ID from AITAM_EMPLOYEE where SUPERVISOR=(select SUPERVISOR 
+				from AITAM_EMPLOYEE where ID=" + emp.getID() + ")");
 				
 				int timeComp=0;
 				int review=0;
@@ -257,7 +267,8 @@ public class Perfometer {
 					ResultSet rs2=null;
 					try{
 						st2= conn.createStatement();
-						rs2= st2.executeQuery("select count(SUB_ID) from AITAM_OURTASK where CREATED<='"+sqlDate +"'  AND COMPLETED>='"+sqlDate +"' AND ASSIGNED="+ id);
+						rs2= st2.executeQuery("select count(SUB_ID) from AITAM_OURTASK where 
+						CREATED<='"+sqlDate +"'  AND COMPLETED>='"+sqlDate +"' AND ASSIGNED="+ id);
 					
 					while(rs2.next()){
 						int c=rs2.getInt(1);
