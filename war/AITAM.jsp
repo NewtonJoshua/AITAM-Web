@@ -150,9 +150,11 @@ if(isMan==1){ %>
  
  <div id="title" align="center">
  <div align="right"><i>
- <a href="Profile.jsp">Manage your AITAM profile </a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+ <a href="Profile.jsp">Manage your AITAM profile </a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+ &nbsp;&nbsp; &nbsp;
  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
- <a href="https://github.com/NewtonJoshua/AITAM/blob/master/AITAM.ppt?raw=true">Download AITAM HandBook</a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+ <a href="https://github.com/NewtonJoshua/AITAM/blob/master/AITAM.ppt?raw=true">Download AITAM HandBook</a> &nbsp; 
+ &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</i>
   AITAM v1.0 &nbsp; &nbsp;</div>
  </div>
