@@ -39,12 +39,14 @@ if(! (l.isEmpty())){
 
 %>
 <table  bgcolor="#336699" border="1" width="80%">
-<tr><th>ID</th><th>Task Title</th><th>Status</th><th>Assigned Date</th><th>Due Date</th><th>Priority</th><th>Assigned By</th>
+<tr><th>ID</th><th>Task Title</th><th>Status</th><th>Assigned Date</th><th>Due Date</th><th>Priority</th>
+<th>Assigned By</th>
 </tr>
 <%for(TaskBean task: l){ %>
 <tr >
 <td><%=task.getTaskId() %></td>
-<td><%=task.getTitle() %> <img align="right" width="20px" src="images/question-mark.png" onclick='alert("Description of Task: \n<%out.print(task.getDesc()); %>");'/></td>
+<td><%=task.getTitle() %> <img align="right" width="20px" src="images/question-mark.png"
+onclick='alert("Description of Task: \n<%out.print(task.getDesc()); %>");'/></td>
 <td>
 <%String stat= task.getStatus();
 %>
@@ -63,15 +65,21 @@ if(! (l.isEmpty())){
   <%if (stat.equalsIgnoreCase("Approve-Dec")){ %><option value="Approve-Dec"   selected >Approve-Dec</option><%} %>
   <%if (stat.equalsIgnoreCase("Appeal-Acp")){ %><option value="Appeal-Acp"   selected >Appeal-Acp</option><%} %>
   <%if (stat.equalsIgnoreCase("Appeal-Dec")){ %><option value="Appeal-Dec"   selected >Appeal-Dec</option><%} %>
-   <%if (stat.equalsIgnoreCase("Appeal") || stat.equalsIgnoreCase("Approve") || stat.equalsIgnoreCase("Accepted")){ %><option value="Accepted"  <%if (stat.equalsIgnoreCase("Accepted")){ %> selected <%} %>>Accepted</option><%} %>
- <%if (!(stat.equalsIgnoreCase("Appeal") || stat.equalsIgnoreCase("Approve"))){ %><option value="Progress"  <%if (stat.equalsIgnoreCase("Progress")){ %> selected <%} %> >In Progress</option><%} %>
-  <%if (!(stat.equalsIgnoreCase("Appeal") || stat.equalsIgnoreCase("Approve") || task.getAssigneeName().equalsIgnoreCase("Self Assigned"))){ %><option value="Review"  <%if (stat.equalsIgnoreCase("Review")){ %> selected <%} %>>Review</option><%} %>
-  <%if(task.getAssigneeName().equalsIgnoreCase("Self Assigned")) {%><option value="Completed"   >Completed</option><% }%>
+   <%if (stat.equalsIgnoreCase("Appeal") || stat.equalsIgnoreCase("Approve") || stat.equalsIgnoreCase("Accepted"))
+   { %><option value="Accepted"  <%if (stat.equalsIgnoreCase("Accepted")){ %> selected <%} %>>Accepted</option><%} %>
+ <%if (!(stat.equalsIgnoreCase("Appeal") || stat.equalsIgnoreCase("Approve"))){ %><option value="Progress"  
+ <%if (stat.equalsIgnoreCase("Progress")){ %> selected <%} %> >In Progress</option><%} %>
+  <%if (!(stat.equalsIgnoreCase("Appeal") || stat.equalsIgnoreCase("Approve") ||
+  task.getAssigneeName().equalsIgnoreCase("Self Assigned"))){ %><option value="Review"  
+  <%if (stat.equalsIgnoreCase("Review")){ %> selected <%} %>>Review</option><%} %>
+  <%if(task.getAssigneeName().equalsIgnoreCase("Self Assigned")) {%><option value="Completed"   >
+  Completed</option><% }%>
 </select>
 </div>
 <div style="float: right">
 <input type="hidden" name="submit" value="myOpenTask"></input>
-<input   hidden=true align="right" type="image" width="18px" id="<%=task.getTaskId() %>" value="myOpenTask" src="images/Refresh.png" ></input>
+<input   hidden=true align="right" type="image" width="18px" id="<%=task.getTaskId() %>" value="myOpenTask"
+src="images/Refresh.png" ></input>
 
 </div>
 </form>
