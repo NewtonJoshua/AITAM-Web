@@ -659,7 +659,8 @@ public class MobileServices extends HttpServlet {
 				}
 		
 		
-		String notify= "ID: "+bean.getId()+" From: "+bean.getFrom() +" To: "+ bean.getTo() + " Task: " + bean.getTask();		
+		String notify= "ID: "+bean.getId()+" From: "+bean.getFrom() +" To: "+ bean.getTo() + " Task: " +
+		bean.getTask();		
 		
 		LOGGER.log(Level.SEVERE,notify);
 		//Exception Handling
