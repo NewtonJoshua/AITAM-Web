@@ -25,7 +25,10 @@ public class ViewOurTask {
 		ResultSet rs5=null;
 		try{
 			st1= conn.createStatement();
-			rs1=st1.executeQuery("select * from AITAM_TASK where REVIEWER=" + emp.getID() + " and ASIGNEE<>" +  emp.getID()+ " and (STATUS='Accepted' or STATUS='Progress' or STATUS='New' or STATUS='Approve-Acp' or STATUS='Approve-Dec' or STATUS='Appeal-Acp' or STATUS='Appeal-Dec' or STATUS='ReWork') order by TASK_ID");
+			rs1=st1.executeQuery("select * from AITAM_TASK where REVIEWER=" + emp.getID() + " and ASIGNEE<>" + 
+			emp.getID()+ " and (STATUS='Accepted' or STATUS='Progress' or STATUS='New' or STATUS='Approve-Acp' 
+			or STATUS='Approve-Dec' or STATUS='Appeal-Acp' or STATUS='Appeal-Dec' or STATUS='ReWork') order by 
+			TASK_ID");
 			while (rs1!=null && rs1.next()){
 				int id=rs1.getInt(1);
 				TaskBean task = new TaskBean();
