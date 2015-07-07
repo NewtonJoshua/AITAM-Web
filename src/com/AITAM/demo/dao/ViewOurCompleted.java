@@ -24,7 +24,8 @@ public class ViewOurCompleted {
 		ResultSet rs5=null;
 			try{
 				st1= conn.createStatement();
-				rs1=st1.executeQuery("select * from AITAM_TASK where CREATOR=" + emp.getID() + " and ASIGNEE<>" +  emp.getID()+ " and STATUS='Completed' order by TASK_ID DESC");
+				rs1=st1.executeQuery("select * from AITAM_TASK where CREATOR=" + emp.getID() + 
+				" and ASIGNEE<>" +  emp.getID()+ " and STATUS='Completed' order by TASK_ID DESC");
 				while (rs1!=null && rs1.next()){
 					int id=rs1.getInt(1);
 					TaskBean task = new TaskBean();
@@ -68,7 +69,8 @@ public class ViewOurCompleted {
 						}
 					}
 					st5= conn.createStatement();
-					rs5= st5.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + (rs1.getInt(11)));
+					rs5= st5.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + 
+					(rs1.getInt(11)));
 					while (rs5.next()){
 						task.setAssigneeName(rs5.getString(1));
 					}
