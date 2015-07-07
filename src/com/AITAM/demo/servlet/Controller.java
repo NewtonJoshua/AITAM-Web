@@ -50,7 +50,8 @@ public class Controller extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
     private final static Logger LOGGER = Logger.getLogger("Controller"); 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, 
+	IOException {
 
 		HttpSession session = request.getSession();
 		session.setMaxInactiveInterval(300);
@@ -105,7 +106,9 @@ public class Controller extends HttpServlet {
 			}
 			else{
 	
-				request.setAttribute("msg", "<font color='red'>Login Failed!!!</font><br> Kindly enter the correct User name and Password. If you do not posses an AITAM account, kindly Register for AITAM.");
+				request.setAttribute("msg", "<font color='red'>Login Failed!!!</font><br> Kindly 
+				enter the correct User name and Password. If you do not posses an AITAM account,
+				kindly Register for AITAM.");
 				RequestDispatcher view = getServletContext().getRequestDispatcher("/Login.jsp"); 
 				view.forward(request,response);
 			}
@@ -154,7 +157,8 @@ public class Controller extends HttpServlet {
 		    	
 		    	session.setAttribute("ses", ses);
 			request.setAttribute("tab", "Home");
-			request.setAttribute("msg", "Sucessfully Registered for AITAM!!! Contact your Admin to align your Supervisor");
+			request.setAttribute("msg", "Sucessfully Registered for AITAM!!! Contact your Admin to align
+			your Supervisor");
 			RequestDispatcher view = getServletContext().getRequestDispatcher("/Login.jsp"); 
 			view.forward(request,response);
 		}
@@ -347,7 +351,8 @@ public class Controller extends HttpServlet {
 							task.setStatus("New");
 							task.setTitle(request.getParameter(sel+"Title"));
 							task.setDesc(request.getParameter(sel+"Desc"));
-							task.setAssigned(Integer.parseInt(request.getParameter(sel+"Assignee")));
+							task.setAssigned(Integer.parseInt(request.getParameter(sel+
+							"Assignee")));
 							task.setDueDate(request.getParameter(sel+"Date"));
 							EmpBean emp=null;
 							emp=(EmpBean)session.getAttribute("Employee"); 
@@ -611,7 +616,8 @@ public class Controller extends HttpServlet {
 	
 					request.setAttribute("msg", man+" has been assigned as the manager of "+mem+" !!!");
 					if(man==0){
-						request.setAttribute("msg", mem+" has been dissociated from his/her manager!!!");
+						request.setAttribute("msg", mem+" has been dissociated from his/her 
+						manager!!!");
 					}
 					request.setAttribute("tab", "list1");
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/Admin.jsp"); 
@@ -660,7 +666,8 @@ public class Controller extends HttpServlet {
 					view.forward(request,response);
 				}
 				
-				String notify= "ID: "+bean.getId()+" From: "+bean.getFrom() +" To: "+ bean.getTo() + " Task: " + bean.getTask();		
+				String notify= "ID: "+bean.getId()+" From: "+bean.getFrom() +" To: "+ bean.getTo() +
+				" Task: " + bean.getTask();		
 				LOGGER.log(Level.SEVERE,notify);
 		}
 		
