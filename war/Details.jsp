@@ -26,7 +26,8 @@ emp=g.getDetails(emp);
 </td></tr>
 <tr><th align="left">Phone No:</th><td>
 <form method="post" action="Controller">
-<input type="text" id="phone" name="phone" value="<%=emp.getPhone() %>"  required pattern="[0-9]{10}" title="10 digit phone number"></input>
+<input type="text" id="phone" name="phone" value="<%=emp.getPhone() %>"  required pattern="[0-9]{10}" title="10 digit 
+phone number"></input>
 <button  type="submit" name="submit"  value="editPhone"><b>Update Phone</b></button>
 </form>
 </td></tr>
