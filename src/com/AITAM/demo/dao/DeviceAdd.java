@@ -9,38 +9,38 @@ import java.sql.Statement;
 import com.AITAM.demo.bean.DeviceBean;
 
 public class DeviceAdd {
-	
-	public void deviceAdd(DeviceBean device) throws ClassNotFoundException, SQLException{
-		Connection conn=Connect.connect();
-		PreparedStatement pst =null;
-		Statement st=null;
-		ResultSet rs=null;
-		try{
-		st= conn.createStatement();
-		rs= st.executeQuery("select EMP_ID from AITAM_DEVICES where DEVICE_ID='" + device.getDeviceID()+"'");
-		if(rs.next()){
-			pst= conn.prepareStatement("update AITAM_DEVICES set EMP_ID=?, PLATFORM=? where DEVICE_ID = ?");
-			pst.setString(3, device.getDeviceID());
-			pst.setString(2, device.getPlatform());
-			pst.setInt(1, device.getEmpID());
-			pst.execute();
-		}
-		else{
-			pst= conn.prepareStatement("insert into AITAM_DEVICES (DEVICE_ID, EMP_ID, PLATFORM)"
-					+ " values(?,?,?)");
-			pst.setString(1, device.getDeviceID());
-			pst.setInt(2, device.getEmpID());
-			pst.setString(3, device.getPlatform());
-			pst.execute();
-		}
+	public void deviceAdd(DeviceBean device) throws ClassNotFoundException, SQLException {
+		Connection conn = Connect.connect();
+		PreparedStatement pst = null;
+		Statement st = null;
+		ResultSet rs = null;
 
-		}
-		finally{
-			if(pst!=null){
+		try {
+			st = conn.createStatement();
+			rs = st.executeQuery(
+					Messages.getString("DeviceAdd.0") + device.getDeviceID() + Messages.getString("DeviceAdd.1")); //$NON-NLS-1$ //$NON-NLS-2$
+
+			if (rs.next()) {
+				pst = conn.prepareStatement(Messages.getString("DeviceAdd.2")); //$NON-NLS-1$
+				pst.setString(3, device.getDeviceID());
+				pst.setString(2, device.getPlatform());
+				pst.setInt(1, device.getEmpID());
+				pst.execute();
+			} else {
+				pst = conn.prepareStatement(Messages.getString("DeviceAdd.3") + Messages.getString("DeviceAdd.4")); //$NON-NLS-1$ //$NON-NLS-2$
+				pst.setString(1, device.getDeviceID());
+				pst.setInt(2, device.getEmpID());
+				pst.setString(3, device.getPlatform());
+				pst.execute();
+			}
+		} finally {
+			if (pst != null) {
 				pst.close();
 			}
+
 			conn.close();
 		}
 	}
-
 }
+
+// ~ Formatted by Jindent --- http://www.jindent.com

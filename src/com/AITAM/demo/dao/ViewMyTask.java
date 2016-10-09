@@ -14,35 +14,40 @@ import com.AITAM.demo.bean.EmpBean;
 import com.AITAM.demo.bean.TaskBean;
 
 public class ViewMyTask {
-	public List<TaskBean> view(EmpBean emp) throws ClassNotFoundException, SQLException{
-		List<TaskBean> l= new ArrayList<TaskBean>();
-		Connection conn= Connect.connect();
-		Statement st1=null;
-		ResultSet rs1=null;
-		Statement st=null;
-		ResultSet rs=null;
-		Statement st5=null;
-		ResultSet rs5=null;
-		Statement st6=null;
-		ResultSet rs6=null;
-		try{
-			st1= conn.createStatement();
-			 rs1=st1.executeQuery("select distinct TASK_ID from AITAM_HIST where ASSIGNED=" + emp.getID() +
-			 " and (CUR_STATUS='Accepted'or CUR_STATUS='Appeal' or CUR_STATUS='Progress' or CUR_STATUS='Review'"
-			 		+ " or CUR_STATUS='Approve' or CUR_STATUS='Approve-Acp' or CUR_STATUS='Approve-Dec'
-			 		or CUR_STATUS='Appeal-Acp' or CUR_STATUS='Appeal-Dec' or  CUR_STATUS='ReWork') order 
-			 		by TASK_ID DESC");
-			while (rs1!=null && rs1.next()){
-				int taskId=rs1.getInt(1);
-				st= conn.createStatement();
-				rs= st.executeQuery("select * from AITAM_TASK where TASK_ID=" + taskId);
-				while (rs.next()){
+	public List<TaskBean> view(EmpBean emp) throws ClassNotFoundException, SQLException {
+		List<TaskBean> l = new ArrayList<TaskBean>();
+		Connection conn = Connect.connect();
+		Statement st1 = null;
+		ResultSet rs1 = null;
+		Statement st = null;
+		ResultSet rs = null;
+		Statement st5 = null;
+		ResultSet rs5 = null;
+		Statement st6 = null;
+		ResultSet rs6 = null;
+
+		try {
+			st1 = conn.createStatement();
+			rs1 = st1.executeQuery(Messages.getString("ViewMyTask.0") + emp.getID() //$NON-NLS-1$
+					+ Messages.getString("ViewMyTask.1") //$NON-NLS-1$
+					+ Messages.getString("ViewMyTask.2")); //$NON-NLS-1$
+
+			while ((rs1 != null) && rs1.next()) {
+				int taskId = rs1.getInt(1);
+
+				st = conn.createStatement();
+				rs = st.executeQuery(Messages.getString("ViewMyTask.3") + taskId); //$NON-NLS-1$
+
+				while (rs.next()) {
 					TaskBean task = new TaskBean();
+
 					task.setTaskId(rs.getInt(1));
 					task.setTitle(rs.getString(2));
+
 					Date date = rs.getDate(3);
-					DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+					DateFormat df = new SimpleDateFormat(Messages.getString("ViewMyTask.4")); //$NON-NLS-1$
 					String dateN = df.format(date);
+
 					task.setDueDate(dateN);
 					task.setPriority(rs.getString(4));
 					task.setReviewer(rs.getInt(5));
@@ -50,59 +55,75 @@ public class ViewMyTask {
 					task.setDesc(rs.getString(7));
 					task.setCommnets(rs.getString(8));
 					task.setCreator(rs.getInt(9));
+
 					Date date1 = rs.getDate(10);
-					DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd");
+					DateFormat df1 = new SimpleDateFormat(Messages.getString("ViewMyTask.5")); //$NON-NLS-1$
 					String dateN1 = df1.format(date1);
+
 					task.setCreatedDate(dateN1);
-					int Creator=(rs.getInt(9));
-					if (rs.getInt(5)==0){
-						task.setReviewerName("Self Reviewed");
-						task.setAssigneeName("Self Assigned");
-					}
-					else{
-						st5= conn.createStatement();
-						rs5= st5.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + 
-						(rs.getInt(5)));
-						while (rs5.next()){
+
+					int Creator = (rs.getInt(9));
+
+					if (rs.getInt(5) == 0) {
+						task.setReviewerName(Messages.getString("ViewMyTask.6")); //$NON-NLS-1$
+						task.setAssigneeName(Messages.getString("ViewMyTask.7")); //$NON-NLS-1$
+					} else {
+						st5 = conn.createStatement();
+						rs5 = st5.executeQuery(Messages.getString("ViewMyTask.8") + (rs.getInt(5))); //$NON-NLS-1$
+
+						while (rs5.next()) {
 							task.setReviewerName(rs5.getString(1));
 						}
-						st6= conn.createStatement();
-						rs6= st6.executeQuery("select NAME from AITAM_EMPLOYEE where ID=" + Creator);
-						while (rs6.next()){
+
+						st6 = conn.createStatement();
+						rs6 = st6.executeQuery(Messages.getString("ViewMyTask.9") + Creator); //$NON-NLS-1$
+
+						while (rs6.next()) {
 							task.setAssigneeName(rs6.getString(1));
 						}
 					}
+
 					l.add(task);
 				}
 			}
-		}
-		finally{
-			if(st1!=null){
+		} finally {
+			if (st1 != null) {
 				st1.close();
 			}
-			if(rs1!=null){
+
+			if (rs1 != null) {
 				rs1.close();
 			}
-			if(st!=null){
+
+			if (st != null) {
 				st.close();
 			}
-			if(rs!=null){
+
+			if (rs != null) {
 				rs.close();
 			}
-			if(st5!=null){
+
+			if (st5 != null) {
 				st5.close();
 			}
-			if(rs5!=null){
+
+			if (rs5 != null) {
 				rs5.close();
 			}
-			if(st6!=null){
+
+			if (st6 != null) {
 				st6.close();
 			}
-			if(rs6!=null){
+
+			if (rs6 != null) {
 				rs6.close();
 			}
+
 			conn.close();
 		}
+
 		return l;
 	}
 }
+
+// ~ Formatted by Jindent --- http://www.jindent.com
