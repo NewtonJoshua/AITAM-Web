@@ -10,7 +10,7 @@ AITAM is a collaborative tool to help associates to manage and track their actio
  
  
 <h2>Products:</h2>
-<img align="right" src="QR Code.png"></img>
+<img align="right" src="docs/QR Code.png"></img>
 The Products developed for AITAM are <br>
 <ol>
 <li> The Web App
@@ -25,7 +25,6 @@ The Products developed for AITAM are <br>
     <ul>
     <li> <a href="https://github.com/NewtonJoshua/AITAM/blob/master/AITAM.apk?raw=true">Android</a>
     <li> <a href="https://github.com/NewtonJoshua/AITAM/blob/master/AITAM.bar?raw=true">BlackBerry</a>
-    <li> iOS
     </ul>
 </li>
 <li> The Mobile Web App
