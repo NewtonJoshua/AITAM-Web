@@ -1,0 +1,97 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>AITAM: Action Item Tracking And Management</title>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+  <link rel="stylesheet" type="text/css" href="CSS/ionic.css">
+  <link rel="stylesheet" type="text/css" href="CSS/ionicons.css"> 
+  <script src="JS/angular.min.js"></script>
+  <script src="JS/fingerprint.js"></script>
+  <script src="JS/popup.js"></script>
+
+  </head>
+    <body style="width:300px" ng-app="AITAM" ng-controller="myCtrl">
+<div ng-hide="signed">
+    <div class="bar  bar-positive">
+        <h1 class="title">AITAM</h1>
+      </div>
+          <div style="height:50px">
+      </div>
+        <div class="item item-divider">
+            Hi there, 
+        </div>
+        <div class="item">
+                <p>        You are not logged in to AITAM. <br>
+        Kindly login to get AITAM Notifications.
+            </p>
+        </div>
+
+           <input id="goto" class="button button-block button-positive" type="button"  value="Login to AITAM" ng-click="goto()"> </input>
+      </label> 
+    
+</div>
+<div ng-show="signed">
+      <div class="bar  bar-positive">
+        <h1 class="title">AITAM</h1>
+      </div>
+          <div style="height:50px">
+      </div>
+  <div class="list">
+        <div class="item item-divider">
+            Welcome <b><i> {{name}}</i></b>, 
+        </div>
+
+        <div class="item item-divider item-icon-right">
+            myTask 
+            <i class="icon ion-ios-person-outline"></i>
+        </div>
+        <div class="item item-icon-left" href="#">
+          <i class="icon ion-alert"></i>
+          New Tasks
+          <span class="badge badge-assertive">{{newCount}}</span>
+        </div>
+        <div class="item item-icon-left" href="#">
+          <i class="icon ion-ios-list-outline"></i>
+          Open Tasks
+          <span class="badge badge-positive">{{openCount}}</span>
+        </div>
+
+        <div class="item item-divider item-icon-right">
+            ourTask 
+            <i class="icon ion-ios-people-outline"></i>
+        </div>
+        <div class="item item-icon-left" href="#">
+          <i class="icon ion-clipboard"></i>
+          Review Tasks
+          <span class="badge badge-assertive">{{reviewCount}}</span>
+        </div>
+        <div class="item item-icon-left" href="#">
+          <i class="icon ion-ios-paper-outline"></i>
+          Open Tasks
+        <span class="badge badge-positive">{{ourNewCount}}</span>
+        </div>
+      <label class="item">
+       <input id="goto" class="button button-block button-positive" type="button"  value="go to AITAM" ng-click="goto()"> </input>
+      </label> 
+              <div style="display:none" class="item item-divider">
+             Device ID:{{fingerprint}}
+        </div>
+    <div  style="display:none" class="item item-divider">
+             Reg ID:{{msg}}
+        </div>
+  </div>
+</div>     
+  </body>
+</html>
+
