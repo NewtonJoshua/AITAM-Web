@@ -322,7 +322,7 @@ $scope.dispStatus=function(){
         if(navigator.userAgent.indexOf("iOS")>-1){
             ext="ipa";
         }
-        var dlink="https://github.com/NewtonJoshua/AITAM/blob/master/AITAM."+ext+"?raw=true";
+        var dlink="https://github.com/NewtonJoshua/AITAM-v1/blob/master/docs/AITAM."+ext+"?raw=true";
         location.href =dlink;
     }
 })
