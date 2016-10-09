@@ -147,7 +147,7 @@ $scope.dispStatus=function(){
                 localStorage.empID= empID;
                 
                 //Add Device
-
+                var device=ionic.Platform.device();
                 showLoading=true;
                 $http.post("/MobileServices?action=DeviceAdd&EmpID=" + empID+"&DeviceID="+fingerprint
                           +"&platform="+navigator.platform)
@@ -262,8 +262,18 @@ $scope.dispStatus=function(){
         
             $scope. employee= name;
             $scope.emp= empID;
-
-            $scope.platform=  navigator.platform;
+                if(navigator.userAgent.indexOf("BB10")>-1){
+                    $scope.platform="BlackBerry";
+                }
+                if(navigator.userAgent.indexOf("Windows")>-1){
+                    $scope.platform="Windows";
+                }
+                if(navigator.userAgent.indexOf("Android")>-1){
+                    $scope.platform="Android";
+                }
+                if(navigator.userAgent.indexOf("iOS")>-1){
+                    $scope.platform="iOS";
+                }
             $scope.fingerprint=  fingerprint;
 
        
@@ -299,16 +309,17 @@ $scope.dispStatus=function(){
     
     $scope.download= function(){
         var ext;
-        if(navigator.platform=="BlackBerry"){
+        
+        if(navigator.userAgent.indexOf("BB10")>-1){
             ext="apk";
         }
-        if(navigator.platform=="ARM"){
+        if(navigator.userAgent.indexOf("Windows")>-1){
             ext="zap";
         }
-        if(navigator.platform=="Android"){
+        if(navigator.userAgent.indexOf("Android")>-1){
             ext="apk";
         }
-        if(navigator.platform=="iOS"){
+        if(navigator.userAgent.indexOf("iOS")>-1){
             ext="ipa";
         }
         var dlink="https://github.com/NewtonJoshua/AITAM/blob/master/AITAM."+ext+"?raw=true";
@@ -766,8 +777,7 @@ $scope.dispStatus=function(){
     
     $scope.reject=function(){
         showLoading=true;
-       $http.post(url+"action=ReviewReject&taskID="+$stateParams.taskID+"&status="+t.Status+"&Priority="+p+"&assigned="+
-       t.Assigned)
+       $http.post(url+"action=ReviewReject&taskID="+$stateParams.taskID+"&status="+t.Status+"&Priority="+p+"&assigned="+t.Assigned)
         .success(function (response) {
            showLoading=false;
                         if(response.ReviewReject == "Succcess"){
