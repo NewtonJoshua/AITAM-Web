@@ -34,14 +34,11 @@ if(! (l.isEmpty())){
 
 %>
 <table  bgcolor="#336699" border="1" width="80%">
-<tr ><th>Title</th><th>ID</th><th>Assignee</th><th>Priority</th><th>Assigned On</th><th>Due On</th><th>
-Completed<th>Task Due On</th><th>Task Completed<th>PerforMeter</th></tr>
+<tr ><th>Title</th><th>ID</th><th>Assignee</th><th>Priority</th><th>Assigned On</th><th>Due On</th><th>Completed<th>Task Due On</th><th>Task Completed<th>PerforMeter</th></tr>
 
 <%for (TaskBean task:l){ %>
 <tr><td><%=task.getMainTitle() %>
-<img align="right" width="20px" src="images/question-mark.png" onclick='alert("Description of Task: \n
-<%out.print(task.getMainDesc()); %>\nActivity: <%=task.getTitle() %>\nDescription of activity: \n
-<%out.print(task.getDesc()); %>");'/>
+<img align="right" width="20px" src="images/question-mark.png" onclick='alert("Description of Task: \n<%out.print(task.getMainDesc()); %>\nActivity: <%=task.getTitle() %>\nDescription of activity: \n<%out.print(task.getDesc()); %>");'/>
 </td>
 <td><%=task.getTaskId() %></td>
 <td><%=task.getAssigneeName() %></td>

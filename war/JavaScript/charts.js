@@ -458,8 +458,7 @@ function buildTree(str) {
     		man='';
     	}
     	data.addRows([
-    	              [{v:id, f:'<b>'+name+'</b><div style="color:black;width: 120px; font-style:italic"><img width="10px" 
-    	              src="images/phone.png"/>'+ phone+'</div>'}, man, 'Emp Id:'+id]
+    	              [{v:id, f:'<b>'+name+'</b><div style="color:black;width: 120px; font-style:italic"><img width="10px" src="images/phone.png"/>'+ phone+'</div>'}, man, 'Emp Id:'+id]
     	              ]);
     }
 
@@ -487,8 +486,7 @@ function buildTeam(str) {
     		man='';
     	}
     	data.addRows([
-    	              [{v:id, f:'<b>'+name+'</b><div style="color:black;width: 120px; font-style:italic"><img width="10px" 
-    	              src="images/phone.png"/>'+ phone+'</div>'}, man, 'Emp Id:'+id]
+    	              [{v:id, f:'<b>'+name+'</b><div style="color:black;width: 120px; font-style:italic"><img width="10px" src="images/phone.png"/>'+ phone+'</div>'}, man, 'Emp Id:'+id]
     	              ]);
     }
 

@@ -52,7 +52,7 @@ EmpBean emp=null;
 		request.setAttribute("Employee", emp);
 		String chart=null;
 		String ourChart=null;
-		if(emp!=null && tab=="Home"){
+		if(emp!=null && tab.equals("Home")){
 			Summary sum=new Summary();
 			chart=sum.count(emp);
 			if(isMan==1){
@@ -150,11 +150,9 @@ if(isMan==1){ %>
  
  <div id="title" align="center">
  <div align="right"><i>
- <a href="Profile.jsp">Manage your AITAM profile </a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
- &nbsp;&nbsp; &nbsp;
+ <a href="Profile.jsp">Manage your AITAM profile </a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
- <a href="https://github.com/NewtonJoshua/AITAM/blob/master/AITAM.ppt?raw=true">Download AITAM HandBook</a> &nbsp; 
- &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+ <a href="https://github.com/NewtonJoshua/AITAM/blob/master/AITAM.ppt?raw=true">Download AITAM HandBook</a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</i>
   AITAM v1.0 &nbsp; &nbsp;</div>
  </div>

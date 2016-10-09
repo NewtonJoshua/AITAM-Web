@@ -7,27 +7,9 @@
  	<script src="JavaScript/scriptFiles.js"></script>
  	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
  	<link rel="stylesheet" type="text/css" href="CSS/Styles.css"></link>
- 	<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/{{Chrome WebStore Product ID}}">
+ 	<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/kchdcdekjfkcjdoighhbghbboomaabaa">
 
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org/",
-  "@type": "SoftwareApplication",
-  "name": "AITAM",
-  "operatingSystem": "ANDROID",
-  "applicationCategory": "http://schema.org/GameApplication",
-  "aggregateRating":{
-    "@type": "AggregateRating",
-    "ratingValue": "4.6",
-    "ratingCount": "8864"
-  },
-  "offers":{
-    "@type": "Offer",
-    "price": "1.00",
-    "priceCurrency": "USD"
-  }
-}
-</script>
+
 <script>
 function device(){
 var fingerprint = (new Fingerprint().get()) + "-" +  new Fingerprint({screen_resolution: true}).get();
@@ -83,10 +65,8 @@ M<font size="5" face="Monotype Corsiva">anagement</font></font>
  		<form method="post" action="Controller">
 	    <input type="hidden"></input>
 	    <table>
-		<tr><td>User ID:</td><td><input type="text" required minlength="6" maxlength="6" pattern="[0-9]{6}" 
-		title="6 digit Employee ID" name="id" maxlength="6" minlength="6" required autofocus></input></td></tr>
-		<tr><td>Password: </td><td><input type="password" required name="pw"  minlength="6" required></input></td>
-		</tr>
+		<tr><td>User ID:</td><td><input type="text" required minlength="6" maxlength="6" pattern="[0-9]{6}" title="6 digit Employee ID" name="id" maxlength="6" minlength="6" required autofocus></input></td></tr>
+		<tr><td>Password: </td><td><input type="password" required name="pw"  minlength="6" required></input></td></tr>
 		<tr><td><input type="hidden" id="fingerprint" name="fingerprint"></input></td>
 		<td><input type="hidden" id="browser" name="browser"></input></td></tr>
 		<tr>
@@ -104,7 +84,7 @@ M<font size="5" face="Monotype Corsiva">anagement</font></font>
     	<b> &nbsp;  &nbsp; Reset &nbsp;  &nbsp; </b>
 		</button></td></tr>
 		</table>
-		<div align="center" class="g-recaptcha" data-sitekey="{{reCaptcha Client side Key}}"></div>
+		<div align="center" class="g-recaptcha" data-sitekey="6LeLMwoTAAAAANxDSct_d29ja_QhMA8hUrtSoIeL"></div>
 		</form>
   
  
@@ -118,6 +98,7 @@ M<font size="5" face="Monotype Corsiva">anagement</font></font>
 </div>
  <script>
  function extension(){
+	 console.log(chrome.app.isInstalled);
 if (chrome.app.isInstalled) {
 	alert("Extension Installed");
 }

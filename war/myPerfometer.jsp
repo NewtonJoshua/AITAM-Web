@@ -39,13 +39,11 @@ str=(String)session.getAttribute("chart");
 <form method="post" action="Controller">
 <div style="float:left">
 From: <br>
-<input required pattern="[2][0][1][0-9][-][0-1][0-9][-][0-3][0-9]" onchange="myMin(this.value,'to');"  
-title="yyyy-mm-dd" type="date" id="from" name="from"></input>
+<input required pattern="[2][0][1][0-9][-][0-1][0-9][-][0-3][0-9]" onchange="myMin(this.value,'to');"  title="yyyy-mm-dd" type="date" id="from" name="from"></input>
 </div >
 <div  style="float:left">
 To: <br> 
-<input required pattern="[2][0][1][0-9][-][0-1][0-9][-][0-3][0-9]"  title="yyyy-mm-dd" type="date" id="to"
-name="to"></input>
+<input required pattern="[2][0][1][0-9][-][0-1][0-9][-][0-3][0-9]"  title="yyyy-mm-dd" type="date" id="to" name="to"></input>
 </div>
 <div align="center">
 <input type="hidden" value="getChart" name="submit"></input>

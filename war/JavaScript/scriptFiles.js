@@ -10,7 +10,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', '{{Google Analytics Tracking ID}}', 'auto');
+  ga('create', 'UA-64801232-5', 'auto');
   ga('send', 'pageview');
 
 function getBrowser(){
@@ -602,7 +602,7 @@ function getDay(buf){
 	var d = new Date();
 	var mon=d.getMonth()+1-buf;
 	if(mon<0){
-	temp=mon;
+	var temp=mon;
 	mon=12+temp;
 	}
 	if(mon<10){

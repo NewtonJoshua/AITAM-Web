@@ -30,16 +30,14 @@ List<TaskBean> l=null;
 %>
 <table id="example"  bgcolor="#336699" border="1" width="80%">
 <thead>
-<tr><th>ID</th><th>Task Title</th><th>Accept</th><th>Assigned Date</th><th>Due Date</th><th>Days</th><th>Priority</th>
-<th>Assigned By</th>
+<tr><th>ID</th><th>Task Title</th><th>Accept</th><th>Assigned Date</th><th>Due Date</th><th>Days</th><th>Priority</th><th>Assigned By</th>
 </tr>
 </thead>
  <tbody>
 <%for(TaskBean task: l){ %>
 <tr >
 <td><%=task.getTaskId() %></td>
-<td><%=task.getTitle() %> <img align="right" width="20px" src="images/question-mark.png"
-onclick='alert("Description of Task: \n<%out.print(task.getDesc()); %>");'/></td>
+<td><%=task.getTitle() %> <img align="right" width="20px" src="images/question-mark.png" onclick='alert("Description of Task: \n<%out.print(task.getDesc()); %>");'/></td>
 <td align="center">
 <form method="post" action="Controller">
 <input name="id" type=text hidden=true value="<%=task.getTaskId() %>"></input>
@@ -54,14 +52,11 @@ onclick='alert("Description of Task: \n<%out.print(task.getDesc()); %>");'/></td
 
 <input name="id" type="text" hidden=true value="<%=task.getTaskId() %>"></input>
 <input name="<%=task.getTaskId() %>" type="text" hidden=true value=""></input>
-<input type="Date"  required pattern="[2][0][1][0-9][-][0-1][0-9][-][0-3][0-9]"
-min="2015-01-01" title="yyyy-mm-dd"  name="appealDate" value="<%=task.getDueDate() %>" 
-onchange="visible('<%=task.getTaskId() %>')"></input>
+<input type="Date"  required pattern="[2][0][1][0-9][-][0-1][0-9][-][0-3][0-9]" min="2015-01-01" title="yyyy-mm-dd"  name="appealDate" value="<%=task.getDueDate() %>" onchange="visible('<%=task.getTaskId() %>')"></input>
 <% String Reviewer=task.getReviewerName() ;
 if(!Reviewer.equalsIgnoreCase("Self Reviewed")){ %>
 <input type="hidden" name="submit" value="Appeal"></input>
-<input  hidden=true id="<%=task.getTaskId() %>" align="right" type="image" width="18px" id="btn" 
-value="" name="" src="images/Refresh.png" ></input>
+<input  hidden=true id="<%=task.getTaskId() %>" align="right" type="image" width="18px" id="btn" value="" name="" src="images/Refresh.png" ></input>
 <%} %>
 </form>
 </div>

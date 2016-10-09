@@ -44,26 +44,22 @@ if(! (l.isEmpty())){
 %>
 
 <table  bgcolor="#336699" border="1" width="80%">
-<tr><th>Title</th><th>Activity</th><th>ID</th><th>Assignee</th><th>Priority</th><th>Assigned On</th><th>Activity Due On
-</th><th>Task Due On</th><th>Approve</th><th>Review</th><th>Comments</th></tr>
+<tr><th>Title</th><th>Activity</th><th>ID</th><th>Assignee</th><th>Priority</th><th>Assigned On</th><th>Activity Due On</th><th>Task Due On</th><th>Approve</th><th>Review</th><th>Comments</th></tr>
 
 <%for (TaskBean task:l){ %>
 
 <tr><td>
 <%if (task.getStatus().equalsIgnoreCase("Approve")){ %>
 <%=task.getTitle() %>
-<img align="right" width="20px" src="images/question-mark.png" onclick='alert("Description of activity: \n
-<%out.print(task.getDesc()); %>");'/>
+<img align="right" width="20px" src="images/question-mark.png" onclick='alert("Description of activity: \n<%out.print(task.getDesc()); %>");'/>
 <%} else{ %>
 <%=task.getMainTitle() %>
-<img align="right" width="20px" src="images/question-mark.png" onclick='alert("Description of Task: \n
-<%out.print(task.getMainDesc()); %>");'/>
+<img align="right" width="20px" src="images/question-mark.png" onclick='alert("Description of Task: \n<%out.print(task.getMainDesc()); %>");'/>
 <%} %>
 
 </td>
 <td><%=task.getTitle() %>
-<img align="right" width="20px" src="images/question-mark.png" onclick='alert("Description of activity: \n
-<%out.print(task.getDesc()); %>");'/>
+<img align="right" width="20px" src="images/question-mark.png" onclick='alert("Description of activity: \n<%out.print(task.getDesc()); %>");'/>
 </td>
 <td><%=task.getTaskId() %></td>
 <td><%=task.getAssigneeName() %></td>
@@ -104,8 +100,7 @@ if (task.getPriority()=="Low"){
 <input type="hidden" name="Priority" value="<%=PrioInt %>"></input>
 <input type="hidden" name="Rating" id="rating<%=task.getTaskId() %>" value=""></input>
 <input type="hidden" name="submit" value="ReviewAccept"></input>
-<input  align="left" type="image" width="18px" id="btn"  src="images/accept.png" alt="Submit" 
-onclick="copyText('ratingSrc<%=task.getTaskId() %>','rating<%=task.getTaskId() %>')"></input>
+<input  align="left" type="image" width="18px" id="btn"  src="images/accept.png" alt="Submit" onclick="copyText('ratingSrc<%=task.getTaskId() %>','rating<%=task.getTaskId() %>')"></input>
 </form>
 
 <form method="post" action="Controller">
