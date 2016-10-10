@@ -5,7 +5,6 @@
 
 AITAM is a collaborative tool to help associates to manage and track their action items to completion.<br>
   AITAM can be used to Create, Assign, Track, Review and Manage the Action Items of a team.<br>
-  AITAM is developed in an effort to learn/refresh the concepts of Java (Java EE Web Components) and Mobile (HTML5- PhoneGap) development.
 
  
  
@@ -14,21 +13,21 @@ AITAM is a collaborative tool to help associates to manage and track their actio
 The Products developed for AITAM are <br>
 <ol>
 <li> The Web App
-    <ul><li><a href="aitam.newtonjoshua.com">AITAM.NewtonJoshua.com</a></li></ul>
+    <ul><li><a href="http://aitam.newtonjoshua.com/">AITAM.NewtonJoshua.com</a></li></ul>
 </li>
 <li> Browser Extension
   <ul>
-  <li> <a href="https://github.com/NewtonJoshua/AITAM/blob/master/AITAM.crx?raw=true">Google Chrome</a></li>
+  <li> <a href="https://chrome.google.com/webstore/detail/aitam-action-item-trackin/kchdcdekjfkcjdoighhbghbboomaabaa">Google Chrome</a></li>
   </ul>
 </li>
 <li> The Mobile App
     <ul>
-    <li> <a href="https://github.com/NewtonJoshua/AITAM/blob/master/AITAM.apk?raw=true">Android</a>
-    <li> <a href="https://github.com/NewtonJoshua/AITAM/blob/master/AITAM.bar?raw=true">BlackBerry</a>
+    <li> <a href="https://github.com/NewtonJoshua/AITAM-v1/blob/master/docs/AITAM.apk?raw=true">Android</a>
+    <li> <a href="https://github.com/NewtonJoshua/AITAM-v1/blob/master/docs/AITAM.bar?raw=true">BlackBerry</a>
     </ul>
 </li>
 <li> The Mobile Web App
-    <ul><li><a href="aitam.newtonjoshua.com">AITAM.NewtonJoshua.com</a></li></ul>
+    <ul><li><a href="http://aitam.newtonjoshua.com/">AITAM.NewtonJoshua.com</a></li></ul>
 </li>
 </ol><br>
 
